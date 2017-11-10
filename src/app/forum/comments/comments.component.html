@@ -2,6 +2,8 @@
 
 <ul>
   <li *ngFor="let c of comments">
-    Salut
+    {{c.content}}
   </li>
 </ul>
+
+<button [routerLink]="['/','post', postId]">Retour au post</button>

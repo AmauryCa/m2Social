@@ -20,4 +20,8 @@ export class PostService {
   getUser(id: number): Observable<User> {
     return this.http.get<User>('api/users/' + id);
   }
+
+  getComments(postId: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>('api/posts/' + postId + '/comments');
+  }
 }
