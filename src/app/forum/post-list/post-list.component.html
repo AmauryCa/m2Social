@@ -1,0 +1,7 @@
+<h2>Liste des posts</h2>
+
+<ul>
+  <li *ngFor="let p of posts">
+    <a [routerLink]="[p.id]">{{p.id}}</a>
+  </li>
+</ul>

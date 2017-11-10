@@ -1,0 +1,8 @@
+<div *ngIf="post">
+  Post {{post.id}} : {{post.content}}
+  <br>
+  <span *ngIf="author">Auteur : {{author.firstName}} {{author.lastName}}</span>
+  <br>
+  <button routerLink="comments">Voir les commentaires</button>
+  <button routerLink="/">Retour à la liste</button>
+</div>
