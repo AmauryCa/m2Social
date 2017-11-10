@@ -7,10 +7,15 @@ import {RouterModule, Routes} from '@angular/router';
 
 const appRoutes: Routes = [
   {
-  path: '',
-  redirectTo: '/post',
-  pathMatch: 'full'
-}];
+    path: '',
+    redirectTo: '/post',
+    pathMatch: 'full'
+  },
+  {
+    path: 'admin',
+    loadChildren: 'app/forum/admin/admin.module#AdminModule',
+  }
+];
 
 @NgModule({
   declarations: [

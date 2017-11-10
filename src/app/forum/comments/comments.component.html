@@ -2,7 +2,8 @@
 
 <ul>
   <li *ngFor="let c of comments">
-    {{c.content}}
+    {{c.content}} <br>
+    <span *ngIf="c.user">Posté le {{c.timestamp | date : 'dd/MM/yyyy à hh:mm'}} par {{c.user.firstName}} {{c.user.lastName}}</span>
   </li>
 </ul>
 

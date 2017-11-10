@@ -17,7 +17,14 @@ export class CommentsComponent implements OnInit {
         (params: ParamMap) => {
           this.postId = +params.get('id');
           return this.service.getComments(+params.get('id'));
-        }).subscribe( comments => this.comments = comments);
+        }).subscribe( comments => {
+            for (const c of comments){
+             this.service.getUser(c.userId).subscribe(
+               user => c.user = user
+             );
+            }
+            this.comments = comments;
+      });
   }
 
   ngOnInit() {

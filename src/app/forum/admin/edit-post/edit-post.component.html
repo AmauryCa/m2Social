@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()" #postForm="ngForm">
+  <div>
+    <input type="text" placeholder="Contenu" name="content" minlength="5" [(ngModel)]="model.content" required>
+  </div>
+  <button type="submit" [disabled]="!postForm.form.valid">Envoyer</button>
+</form>
+
+<button [routerLink]="['/']">Liste des posts</button>
+

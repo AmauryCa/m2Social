@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {Post} from './post';
 import {User} from './user';
+import {Comment} from './comment';
 
 @Injectable()
 export class PostService {
@@ -23,5 +24,13 @@ export class PostService {
 
   getComments(postId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>('api/posts/' + postId + '/comments');
+  }
+
+  create(post: Post): void {
+    if (post.id) {
+      this.http.patch<Post>('api/posts/' + post.id, post).subscribe();
+    } else {
+      this.http.post<Post>('api/posts', post).subscribe();
+    }
   }
 }
